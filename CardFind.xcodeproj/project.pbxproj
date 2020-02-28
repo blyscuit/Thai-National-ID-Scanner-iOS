@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6870DA562408F54E00912451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA552408F54E00912451 /* AppDelegate.swift */; };
+		6870DA582408F54E00912451 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA572408F54E00912451 /* SceneDelegate.swift */; };
+		6870DA5A2408F54E00912451 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA592408F54E00912451 /* ViewController.swift */; };
+		6870DA5D2408F54E00912451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6870DA5B2408F54E00912451 /* Main.storyboard */; };
+		6870DA5F2408F55000912451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6870DA5E2408F55000912451 /* Assets.xcassets */; };
+		6870DA622408F55000912451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6870DA602408F55000912451 /* LaunchScreen.storyboard */; };
+		6870DA6D2408F55000912451 /* CardFindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA6C2408F55000912451 /* CardFindTests.swift */; };
+		6870DA782408F55000912451 /* CardFindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA772408F55000912451 /* CardFindUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6870DA692408F55000912451 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6870DA4A2408F54E00912451 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6870DA512408F54E00912451;
+			remoteInfo = CardFind;
+		};
+		6870DA742408F55000912451 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6870DA4A2408F54E00912451 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6870DA512408F54E00912451;
+			remoteInfo = CardFind;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6870DA522408F54E00912451 /* CardFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6870DA552408F54E00912451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6870DA572408F54E00912451 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6870DA592408F54E00912451 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6870DA5C2408F54E00912451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6870DA5E2408F55000912451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6870DA612408F55000912451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6870DA632408F55000912451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6870DA682408F55000912451 /* CardFindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardFindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6870DA6C2408F55000912451 /* CardFindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFindTests.swift; sourceTree = "<group>"; };
+		6870DA6E2408F55000912451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6870DA732408F55000912451 /* CardFindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardFindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6870DA772408F55000912451 /* CardFindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFindUITests.swift; sourceTree = "<group>"; };
+		6870DA792408F55100912451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6870DA4F2408F54E00912451 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6870DA652408F55000912451 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6870DA702408F55000912451 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6870DA492408F54E00912451 = {
+			isa = PBXGroup;
+			children = (
+				6870DA542408F54E00912451 /* CardFind */,
+				6870DA6B2408F55000912451 /* CardFindTests */,
+				6870DA762408F55000912451 /* CardFindUITests */,
+				6870DA532408F54E00912451 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6870DA532408F54E00912451 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6870DA522408F54E00912451 /* CardFind.app */,
+				6870DA682408F55000912451 /* CardFindTests.xctest */,
+				6870DA732408F55000912451 /* CardFindUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6870DA542408F54E00912451 /* CardFind */ = {
+			isa = PBXGroup;
+			children = (
+				6870DA552408F54E00912451 /* AppDelegate.swift */,
+				6870DA572408F54E00912451 /* SceneDelegate.swift */,
+				6870DA592408F54E00912451 /* ViewController.swift */,
+				6870DA5B2408F54E00912451 /* Main.storyboard */,
+				6870DA5E2408F55000912451 /* Assets.xcassets */,
+				6870DA602408F55000912451 /* LaunchScreen.storyboard */,
+				6870DA632408F55000912451 /* Info.plist */,
+			);
+			path = CardFind;
+			sourceTree = "<group>";
+		};
+		6870DA6B2408F55000912451 /* CardFindTests */ = {
+			isa = PBXGroup;
+			children = (
+				6870DA6C2408F55000912451 /* CardFindTests.swift */,
+				6870DA6E2408F55000912451 /* Info.plist */,
+			);
+			path = CardFindTests;
+			sourceTree = "<group>";
+		};
+		6870DA762408F55000912451 /* CardFindUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6870DA772408F55000912451 /* CardFindUITests.swift */,
+				6870DA792408F55100912451 /* Info.plist */,
+			);
+			path = CardFindUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6870DA512408F54E00912451 /* CardFind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6870DA7C2408F55100912451 /* Build configuration list for PBXNativeTarget "CardFind" */;
+			buildPhases = (
+				6870DA4E2408F54E00912451 /* Sources */,
+				6870DA4F2408F54E00912451 /* Frameworks */,
+				6870DA502408F54E00912451 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardFind;
+			productName = CardFind;
+			productReference = 6870DA522408F54E00912451 /* CardFind.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6870DA672408F55000912451 /* CardFindTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6870DA7F2408F55100912451 /* Build configuration list for PBXNativeTarget "CardFindTests" */;
+			buildPhases = (
+				6870DA642408F55000912451 /* Sources */,
+				6870DA652408F55000912451 /* Frameworks */,
+				6870DA662408F55000912451 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6870DA6A2408F55000912451 /* PBXTargetDependency */,
+			);
+			name = CardFindTests;
+			productName = CardFindTests;
+			productReference = 6870DA682408F55000912451 /* CardFindTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6870DA722408F55000912451 /* CardFindUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6870DA822408F55100912451 /* Build configuration list for PBXNativeTarget "CardFindUITests" */;
+			buildPhases = (
+				6870DA6F2408F55000912451 /* Sources */,
+				6870DA702408F55000912451 /* Frameworks */,
+				6870DA712408F55000912451 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6870DA752408F55000912451 /* PBXTargetDependency */,
+			);
+			name = CardFindUITests;
+			productName = CardFindUITests;
+			productReference = 6870DA732408F55000912451 /* CardFindUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6870DA4A2408F54E00912451 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = 23;
+				TargetAttributes = {
+					6870DA512408F54E00912451 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					6870DA672408F55000912451 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 6870DA512408F54E00912451;
+					};
+					6870DA722408F55000912451 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 6870DA512408F54E00912451;
+					};
+				};
+			};
+			buildConfigurationList = 6870DA4D2408F54E00912451 /* Build configuration list for PBXProject "CardFind" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6870DA492408F54E00912451;
+			productRefGroup = 6870DA532408F54E00912451 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6870DA512408F54E00912451 /* CardFind */,
+				6870DA672408F55000912451 /* CardFindTests */,
+				6870DA722408F55000912451 /* CardFindUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6870DA502408F54E00912451 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6870DA622408F55000912451 /* LaunchScreen.storyboard in Resources */,
+				6870DA5F2408F55000912451 /* Assets.xcassets in Resources */,
+				6870DA5D2408F54E00912451 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6870DA662408F55000912451 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6870DA712408F55000912451 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6870DA4E2408F54E00912451 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6870DA5A2408F54E00912451 /* ViewController.swift in Sources */,
+				6870DA562408F54E00912451 /* AppDelegate.swift in Sources */,
+				6870DA582408F54E00912451 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6870DA642408F55000912451 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6870DA6D2408F55000912451 /* CardFindTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6870DA6F2408F55000912451 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6870DA782408F55000912451 /* CardFindUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6870DA6A2408F55000912451 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6870DA512408F54E00912451 /* CardFind */;
+			targetProxy = 6870DA692408F55000912451 /* PBXContainerItemProxy */;
+		};
+		6870DA752408F55000912451 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6870DA512408F54E00912451 /* CardFind */;
+			targetProxy = 6870DA742408F55000912451 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6870DA5B2408F54E00912451 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6870DA5C2408F54E00912451 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6870DA602408F55000912451 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6870DA612408F55000912451 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6870DA7A2408F55100912451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6870DA7B2408F55100912451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6870DA7D2408F55100912451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93QF44Z6JU;
+				INFOPLIST_FILE = CardFind/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.confusians.CardFind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6870DA7E2408F55100912451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93QF44Z6JU;
+				INFOPLIST_FILE = CardFind/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.confusians.CardFind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6870DA802408F55100912451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93QF44Z6JU;
+				INFOPLIST_FILE = CardFindTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.confusians.CardFindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardFind.app/CardFind";
+			};
+			name = Debug;
+		};
+		6870DA812408F55100912451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93QF44Z6JU;
+				INFOPLIST_FILE = CardFindTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.confusians.CardFindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardFind.app/CardFind";
+			};
+			name = Release;
+		};
+		6870DA832408F55100912451 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93QF44Z6JU;
+				INFOPLIST_FILE = CardFindUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.confusians.CardFindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CardFind;
+			};
+			name = Debug;
+		};
+		6870DA842408F55100912451 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93QF44Z6JU;
+				INFOPLIST_FILE = CardFindUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.confusians.CardFindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CardFind;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6870DA4D2408F54E00912451 /* Build configuration list for PBXProject "CardFind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6870DA7A2408F55100912451 /* Debug */,
+				6870DA7B2408F55100912451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6870DA7C2408F55100912451 /* Build configuration list for PBXNativeTarget "CardFind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6870DA7D2408F55100912451 /* Debug */,
+				6870DA7E2408F55100912451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6870DA7F2408F55100912451 /* Build configuration list for PBXNativeTarget "CardFindTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6870DA802408F55100912451 /* Debug */,
+				6870DA812408F55100912451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6870DA822408F55100912451 /* Build configuration list for PBXNativeTarget "CardFindUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6870DA832408F55100912451 /* Debug */,
+				6870DA842408F55100912451 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6870DA4A2408F54E00912451 /* Project object */;
+}

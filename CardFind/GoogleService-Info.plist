@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>199377727109-hvt0b5qaq9ji67rpc1os0tcv0gv05v7j.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.199377727109-hvt0b5qaq9ji67rpc1os0tcv0gv05v7j</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA8CbZ02dKNVH_ZHE7ISqDWhwgAFJrU8mI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>199377727109</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.confusians.CardFind</string>
+	<key>PROJECT_ID</key>
+	<string>cardfind-f332e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cardfind-f332e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:199377727109:ios:82a8829ab37081df6c83ec</string>
+	<key>DATABASE_URL</key>
+	<string>https://cardfind-f332e.firebaseio.com</string>
+</dict>
+</plist>

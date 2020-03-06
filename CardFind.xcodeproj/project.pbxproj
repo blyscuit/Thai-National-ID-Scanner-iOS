@@ -3,18 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D9B349A28EECF0F2FCFA1E /* Pods_CardFind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9EE306E0E5E897A7F8DD9D /* Pods_CardFind.framework */; };
+		03D190468EC1621878152640 /* Pods_CardFindTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76A85F9CAC58D6D3A572978 /* Pods_CardFindTests.framework */; };
+		05998B59761BC0B460800B55 /* Pods_CardFind_CardFindUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ACF76959BAB5CB573EB6D19 /* Pods_CardFind_CardFindUITests.framework */; };
 		6870DA562408F54E00912451 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA552408F54E00912451 /* AppDelegate.swift */; };
-		6870DA582408F54E00912451 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA572408F54E00912451 /* SceneDelegate.swift */; };
 		6870DA5A2408F54E00912451 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA592408F54E00912451 /* ViewController.swift */; };
 		6870DA5D2408F54E00912451 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6870DA5B2408F54E00912451 /* Main.storyboard */; };
 		6870DA5F2408F55000912451 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6870DA5E2408F55000912451 /* Assets.xcassets */; };
 		6870DA622408F55000912451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6870DA602408F55000912451 /* LaunchScreen.storyboard */; };
 		6870DA6D2408F55000912451 /* CardFindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA6C2408F55000912451 /* CardFindTests.swift */; };
 		6870DA782408F55000912451 /* CardFindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA772408F55000912451 /* CardFindUITests.swift */; };
+		6870DA862408F7F200912451 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA852408F7F200912451 /* FaceView.swift */; };
+		6870DA8A2408F8FF00912451 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA882408F8FF00912451 /* UIViewExtension.swift */; };
+		6870DA8B2408F8FF00912451 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA892408F8FF00912451 /* CoreGraphicsExtensions.swift */; };
+		6870DA8D24091C9C00912451 /* ImageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA8C24091C9C00912451 /* ImageViewViewController.swift */; };
+		6870DA8F24092BDF00912451 /* TextScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA8E24092BDF00912451 /* TextScan.swift */; };
+		6870DA91240CBAC200912451 /* ScanTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DA90240CBAC200912451 /* ScanTextViewController.swift */; };
+		6870DB37240E625800912451 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 6870DB36240E625800912451 /* tessdata */; };
+		6870DB43240E796000912451 /* OCR-Network in Resources */ = {isa = PBXBuildFile; fileRef = 6870DB42240E796000912451 /* OCR-Network */; };
+		6870DB45240F75EA00912451 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6870DB44240F75EA00912451 /* GoogleService-Info.plist */; };
+		6870DB49240FAEAA00912451 /* AutoScanTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DB48240FAEAA00912451 /* AutoScanTextViewController.swift */; };
+		6870DB4B240FBAF800912451 /* AutoScanTTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DB4A240FBAF700912451 /* AutoScanTTextViewController.swift */; };
+		6870DB4D2410E15F00912451 /* NationalIDResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DB4C2410E15E00912451 /* NationalIDResultViewController.swift */; };
+		6870DB4F2410F52A00912451 /* TestIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DB4E2410F52A00912451 /* TestIDViewController.swift */; };
+		6870DB6D24123B7F00912451 /* AutoBuildInTextScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6870DB6C24123B7F00912451 /* AutoBuildInTextScanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012497D377FF0A19770AF277 /* Pods-CardFindTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardFindTests.debug.xcconfig"; path = "Target Support Files/Pods-CardFindTests/Pods-CardFindTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2A9EE306E0E5E897A7F8DD9D /* Pods_CardFind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardFind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DEF7CB260CDD9432752ED94 /* Pods-CardFind-CardFindUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardFind-CardFindUITests.release.xcconfig"; path = "Target Support Files/Pods-CardFind-CardFindUITests/Pods-CardFind-CardFindUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6870DA522408F54E00912451 /* CardFind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardFind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6870DA552408F54E00912451 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6870DA572408F54E00912451 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6870DA592408F54E00912451 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6870DA5C2408F54E00912451 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6870DA5E2408F55000912451 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +67,26 @@
 		6870DA732408F55000912451 /* CardFindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardFindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6870DA772408F55000912451 /* CardFindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFindUITests.swift; sourceTree = "<group>"; };
 		6870DA792408F55100912451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6870DA852408F7F200912451 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		6870DA882408F8FF00912451 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		6870DA892408F8FF00912451 /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
+		6870DA8C24091C9C00912451 /* ImageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewViewController.swift; sourceTree = "<group>"; };
+		6870DA8E24092BDF00912451 /* TextScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScan.swift; sourceTree = "<group>"; };
+		6870DA90240CBAC200912451 /* ScanTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTextViewController.swift; sourceTree = "<group>"; };
+		6870DB36240E625800912451 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		6870DB42240E796000912451 /* OCR-Network */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "OCR-Network"; sourceTree = "<group>"; };
+		6870DB44240F75EA00912451 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6870DB48240FAEAA00912451 /* AutoScanTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScanTextViewController.swift; sourceTree = "<group>"; };
+		6870DB4A240FBAF700912451 /* AutoScanTTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScanTTextViewController.swift; sourceTree = "<group>"; };
+		6870DB4C2410E15E00912451 /* NationalIDResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalIDResultViewController.swift; sourceTree = "<group>"; };
+		6870DB4E2410F52A00912451 /* TestIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIDViewController.swift; sourceTree = "<group>"; };
+		6870DB6C24123B7F00912451 /* AutoBuildInTextScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBuildInTextScanViewController.swift; sourceTree = "<group>"; };
+		6ACF76959BAB5CB573EB6D19 /* Pods_CardFind_CardFindUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardFind_CardFindUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		932F3B3473245EB702488CAF /* Pods-CardFindTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardFindTests.release.xcconfig"; path = "Target Support Files/Pods-CardFindTests/Pods-CardFindTests.release.xcconfig"; sourceTree = "<group>"; };
+		BC021AB461F58AEEC02F951B /* Pods-CardFind-CardFindUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardFind-CardFindUITests.debug.xcconfig"; path = "Target Support Files/Pods-CardFind-CardFindUITests/Pods-CardFind-CardFindUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D589E976CE24CE65D506B5F7 /* Pods-CardFind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardFind.release.xcconfig"; path = "Target Support Files/Pods-CardFind/Pods-CardFind.release.xcconfig"; sourceTree = "<group>"; };
+		E76A85F9CAC58D6D3A572978 /* Pods_CardFindTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardFindTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE4EF2BABF204C683B2C3EB3 /* Pods-CardFind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardFind.debug.xcconfig"; path = "Target Support Files/Pods-CardFind/Pods-CardFind.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D9B349A28EECF0F2FCFA1E /* Pods_CardFind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D190468EC1621878152640 /* Pods_CardFindTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +110,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05998B59761BC0B460800B55 /* Pods_CardFind_CardFindUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160D0EA318D7642C58187A5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A9EE306E0E5E897A7F8DD9D /* Pods_CardFind.framework */,
+				6ACF76959BAB5CB573EB6D19 /* Pods_CardFind_CardFindUITests.framework */,
+				E76A85F9CAC58D6D3A572978 /* Pods_CardFindTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		527BB96674F8EEFB5F18FCAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE4EF2BABF204C683B2C3EB3 /* Pods-CardFind.debug.xcconfig */,
+				D589E976CE24CE65D506B5F7 /* Pods-CardFind.release.xcconfig */,
+				BC021AB461F58AEEC02F951B /* Pods-CardFind-CardFindUITests.debug.xcconfig */,
+				4DEF7CB260CDD9432752ED94 /* Pods-CardFind-CardFindUITests.release.xcconfig */,
+				012497D377FF0A19770AF277 /* Pods-CardFindTests.debug.xcconfig */,
+				932F3B3473245EB702488CAF /* Pods-CardFindTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		6870DA492408F54E00912451 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +147,8 @@
 				6870DA6B2408F55000912451 /* CardFindTests */,
 				6870DA762408F55000912451 /* CardFindUITests */,
 				6870DA532408F54E00912451 /* Products */,
+				527BB96674F8EEFB5F18FCAB /* Pods */,
+				160D0EA318D7642C58187A5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +165,21 @@
 		6870DA542408F54E00912451 /* CardFind */ = {
 			isa = PBXGroup;
 			children = (
+				6870DB44240F75EA00912451 /* GoogleService-Info.plist */,
+				6870DB42240E796000912451 /* OCR-Network */,
+				6870DB36240E625800912451 /* tessdata */,
+				6870DA872408F8FF00912451 /* Extensions */,
 				6870DA552408F54E00912451 /* AppDelegate.swift */,
-				6870DA572408F54E00912451 /* SceneDelegate.swift */,
+				6870DA852408F7F200912451 /* FaceView.swift */,
 				6870DA592408F54E00912451 /* ViewController.swift */,
+				6870DA8C24091C9C00912451 /* ImageViewViewController.swift */,
+				6870DA90240CBAC200912451 /* ScanTextViewController.swift */,
+				6870DB4A240FBAF700912451 /* AutoScanTTextViewController.swift */,
+				6870DB48240FAEAA00912451 /* AutoScanTextViewController.swift */,
+				6870DA8E24092BDF00912451 /* TextScan.swift */,
+				6870DB4C2410E15E00912451 /* NationalIDResultViewController.swift */,
+				6870DB4E2410F52A00912451 /* TestIDViewController.swift */,
+				6870DB6C24123B7F00912451 /* AutoBuildInTextScanViewController.swift */,
 				6870DA5B2408F54E00912451 /* Main.storyboard */,
 				6870DA5E2408F55000912451 /* Assets.xcassets */,
 				6870DA602408F55000912451 /* LaunchScreen.storyboard */,
@@ -128,6 +206,15 @@
 			path = CardFindUITests;
 			sourceTree = "<group>";
 		};
+		6870DA872408F8FF00912451 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6870DA882408F8FF00912451 /* UIViewExtension.swift */,
+				6870DA892408F8FF00912451 /* CoreGraphicsExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6870DA7C2408F55100912451 /* Build configuration list for PBXNativeTarget "CardFind" */;
 			buildPhases = (
+				3CC2D259BB7616F42B724EE4 /* [CP] Check Pods Manifest.lock */,
 				6870DA4E2408F54E00912451 /* Sources */,
 				6870DA4F2408F54E00912451 /* Frameworks */,
 				6870DA502408F54E00912451 /* Resources */,
+				D2BD33A05F1C9375F3771D2E /* [CP] Embed Pods Frameworks */,
+				4287BDD1B3BCA2B8F6576024 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +242,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6870DA7F2408F55100912451 /* Build configuration list for PBXNativeTarget "CardFindTests" */;
 			buildPhases = (
+				9A851B8E9CE1D223BDC07C18 /* [CP] Check Pods Manifest.lock */,
 				6870DA642408F55000912451 /* Sources */,
 				6870DA652408F55000912451 /* Frameworks */,
 				6870DA662408F55000912451 /* Resources */,
@@ -170,9 +261,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6870DA822408F55100912451 /* Build configuration list for PBXNativeTarget "CardFindUITests" */;
 			buildPhases = (
+				A5C897FC353E5D59FD4CEB2C /* [CP] Check Pods Manifest.lock */,
 				6870DA6F2408F55000912451 /* Sources */,
 				6870DA702408F55000912451 /* Frameworks */,
 				6870DA712408F55000912451 /* Resources */,
+				D1041BA4458121B8BD62A456 /* [CP] Embed Pods Frameworks */,
+				7D2A58384978AB0DA1A6E5B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,7 +326,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6870DB45240F75EA00912451 /* GoogleService-Info.plist in Resources */,
+				6870DB43240E796000912451 /* OCR-Network in Resources */,
 				6870DA622408F55000912451 /* LaunchScreen.storyboard in Resources */,
+				6870DB37240E625800912451 /* tessdata in Resources */,
 				6870DA5F2408F55000912451 /* Assets.xcassets in Resources */,
 				6870DA5D2408F54E00912451 /* Main.storyboard in Resources */,
 			);
@@ -254,14 +351,161 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3CC2D259BB7616F42B724EE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CardFind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4287BDD1B3BCA2B8F6576024 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardFind/Pods-CardFind-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardFind/Pods-CardFind-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CardFind/Pods-CardFind-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D2A58384978AB0DA1A6E5B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardFind-CardFindUITests/Pods-CardFind-CardFindUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardFind-CardFindUITests/Pods-CardFind-CardFindUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CardFind-CardFindUITests/Pods-CardFind-CardFindUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A851B8E9CE1D223BDC07C18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CardFindTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5C897FC353E5D59FD4CEB2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CardFind-CardFindUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1041BA4458121B8BD62A456 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardFind-CardFindUITests/Pods-CardFind-CardFindUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardFind-CardFindUITests/Pods-CardFind-CardFindUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CardFind-CardFindUITests/Pods-CardFind-CardFindUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2BD33A05F1C9375F3771D2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardFind/Pods-CardFind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardFind/Pods-CardFind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CardFind/Pods-CardFind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6870DA4E2408F54E00912451 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6870DB4B240FBAF800912451 /* AutoScanTTextViewController.swift in Sources */,
+				6870DB4F2410F52A00912451 /* TestIDViewController.swift in Sources */,
+				6870DA91240CBAC200912451 /* ScanTextViewController.swift in Sources */,
 				6870DA5A2408F54E00912451 /* ViewController.swift in Sources */,
+				6870DB6D24123B7F00912451 /* AutoBuildInTextScanViewController.swift in Sources */,
+				6870DB49240FAEAA00912451 /* AutoScanTextViewController.swift in Sources */,
 				6870DA562408F54E00912451 /* AppDelegate.swift in Sources */,
-				6870DA582408F54E00912451 /* SceneDelegate.swift in Sources */,
+				6870DA8F24092BDF00912451 /* TextScan.swift in Sources */,
+				6870DA8A2408F8FF00912451 /* UIViewExtension.swift in Sources */,
+				6870DA8B2408F8FF00912451 /* CoreGraphicsExtensions.swift in Sources */,
+				6870DA862408F7F200912451 /* FaceView.swift in Sources */,
+				6870DB4D2410E15F00912451 /* NationalIDResultViewController.swift in Sources */,
+				6870DA8D24091C9C00912451 /* ImageViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,11 +676,13 @@
 		};
 		6870DA7D2408F55100912451 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE4EF2BABF204C683B2C3EB3 /* Pods-CardFind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93QF44Z6JU;
 				INFOPLIST_FILE = CardFind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,11 +696,13 @@
 		};
 		6870DA7E2408F55100912451 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D589E976CE24CE65D506B5F7 /* Pods-CardFind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93QF44Z6JU;
 				INFOPLIST_FILE = CardFind/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,6 +716,7 @@
 		};
 		6870DA802408F55100912451 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 012497D377FF0A19770AF277 /* Pods-CardFindTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +739,7 @@
 		};
 		6870DA812408F55100912451 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 932F3B3473245EB702488CAF /* Pods-CardFindTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +762,7 @@
 		};
 		6870DA832408F55100912451 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC021AB461F58AEEC02F951B /* Pods-CardFind-CardFindUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +783,7 @@
 		};
 		6870DA842408F55100912451 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DEF7CB260CDD9432752ED94 /* Pods-CardFind-CardFindUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

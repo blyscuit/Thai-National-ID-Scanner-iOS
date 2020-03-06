@@ -1,24 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A9q-Ny-ZcD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Face Detection View Controller-->
+        <scene sceneID="onx-Gu-ffb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="A9q-Ny-ZcD" customClass="FaceDetectionViewController" customModule="CardFind" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1h6-nb-mS1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNp-Oa-5yk" customClass="FaceView" customModule="CardFind" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNI-jO-fga" customClass="LaserView" customModule="CardFind" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewh-YA-7kJ">
+                                <rect key="frame" x="161.5" y="821" width="91" height="41"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mob-EY-t2k">
+                                    <rect key="frame" x="0.0" y="0.0" width="91" height="41"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Face" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3e-ig-WYg">
+                                            <rect key="frame" x="20" y="10" width="51" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="rbS-hx-qmG"/>
+                                                <constraint firstAttribute="height" constant="21" id="z0e-eQ-uZM"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="rw-light"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="9GP-cI-NCZ"/>
+                                    <constraint firstAttribute="width" constant="91" id="Fzh-Zj-iYa"/>
+                                    <constraint firstItem="V3e-ig-WYg" firstAttribute="centerX" secondItem="ewh-YA-7kJ" secondAttribute="centerX" id="Kah-Ug-nD3"/>
+                                    <constraint firstItem="V3e-ig-WYg" firstAttribute="centerY" secondItem="ewh-YA-7kJ" secondAttribute="centerY" id="atJ-t4-gqd"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="top" secondItem="JNI-jO-fga" secondAttribute="top" id="2id-4M-lbZ"/>
+                            <constraint firstItem="JNI-jO-fga" firstAttribute="leading" secondItem="1h6-nb-mS1" secondAttribute="leading" id="8Za-e7-nRe"/>
+                            <constraint firstItem="HNp-Oa-5yk" firstAttribute="height" secondItem="JNI-jO-fga" secondAttribute="height" id="B8p-DA-Gl4"/>
+                            <constraint firstAttribute="trailing" secondItem="JNI-jO-fga" secondAttribute="trailing" id="KPK-pQ-4Or"/>
+                            <constraint firstItem="HNp-Oa-5yk" firstAttribute="centerY" secondItem="JNI-jO-fga" secondAttribute="centerY" id="Lbp-WB-GAV"/>
+                            <constraint firstItem="fA5-H6-saG" firstAttribute="bottom" secondItem="ewh-YA-7kJ" secondAttribute="bottom" id="MJ4-xV-7wN"/>
+                            <constraint firstItem="ewh-YA-7kJ" firstAttribute="centerX" secondItem="1h6-nb-mS1" secondAttribute="centerXWithinMargins" id="Upv-In-8ck"/>
+                            <constraint firstItem="HNp-Oa-5yk" firstAttribute="width" secondItem="JNI-jO-fga" secondAttribute="width" id="bOC-1W-BqV"/>
+                            <constraint firstItem="HNp-Oa-5yk" firstAttribute="centerX" secondItem="JNI-jO-fga" secondAttribute="centerX" id="ptZ-sq-i9X"/>
+                            <constraint firstAttribute="bottom" secondItem="JNI-jO-fga" secondAttribute="bottom" id="zA6-5k-XYg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fA5-H6-saG"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="T0c-tF-uhM" appends="YES" id="SEN-Xe-9P0"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="HNp-Oa-5yk" id="gpV-LD-LKg"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="niZ-jL-ht3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="T0c-tF-uhM">
+                    <connections>
+                        <action selector="handleTap:" destination="A9q-Ny-ZcD" id="IcR-Vb-Ca1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-234.40000000000001" y="160.56971514242881"/>
+        </scene>
+        <!--Auto ScanT Text Detection View Controller-->
+        <scene sceneID="xum-Px-EvB">
+            <objects>
+                <viewController storyboardIdentifier="Main" id="i6D-rt-q6M" customClass="AutoScanTTextDetectionViewController" customModule="CardFind" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZAn-ya-9CX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQF-c1-Dau">
+                                <rect key="frame" x="161.5" y="821" width="91" height="41"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qYv-3h-hhx">
+                                    <rect key="frame" x="0.0" y="0.0" width="91" height="41"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Face" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rb-3v-bqc">
+                                            <rect key="frame" x="20" y="10.5" width="51" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="r0w-0E-YSe"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="rw-light"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="8Rb-3v-bqc" firstAttribute="centerX" secondItem="zQF-c1-Dau" secondAttribute="centerX" id="0h6-gx-wBf"/>
+                                    <constraint firstItem="8Rb-3v-bqc" firstAttribute="centerY" secondItem="zQF-c1-Dau" secondAttribute="centerY" id="269-2g-fxQ"/>
+                                    <constraint firstAttribute="width" constant="91" id="Nsp-HC-GU6"/>
+                                    <constraint firstAttribute="height" constant="41" id="jgj-Gv-Gtx"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gCH-6n-oqE">
+                                <rect key="frame" x="0.0" y="177.5" width="414" height="551"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gCH-6n-oqE" secondAttribute="height" multiplier="1:1.33" id="c9R-z4-a5Q"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="p3r-UN-lKU" firstAttribute="trailing" secondItem="gCH-6n-oqE" secondAttribute="trailing" id="5Hf-6S-iCy"/>
+                            <constraint firstItem="zQF-c1-Dau" firstAttribute="centerX" secondItem="ZAn-ya-9CX" secondAttribute="centerXWithinMargins" id="5tJ-oA-tQd"/>
+                            <constraint firstItem="gCH-6n-oqE" firstAttribute="leading" secondItem="p3r-UN-lKU" secondAttribute="leading" id="OmD-Dl-lci"/>
+                            <constraint firstItem="gCH-6n-oqE" firstAttribute="centerY" secondItem="p3r-UN-lKU" secondAttribute="centerY" id="VTi-bC-mZ8"/>
+                            <constraint firstItem="p3r-UN-lKU" firstAttribute="bottom" secondItem="zQF-c1-Dau" secondAttribute="bottom" id="nyv-Gu-uGi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p3r-UN-lKU"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vRE-4f-4Ya" appends="YES" id="DGs-et-nh3"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="faceLaserLabel" destination="8Rb-3v-bqc" id="5sL-d5-RxV"/>
+                        <outlet property="faceView" destination="gCH-6n-oqE" id="wjd-14-EuM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKz-jw-DNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vRE-4f-4Ya">
+                    <connections>
+                        <action selector="handleTap:" destination="i6D-rt-q6M" id="jfK-op-p7e"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="638" y="160"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="rw-light">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

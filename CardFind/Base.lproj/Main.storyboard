@@ -144,14 +144,22 @@
                                     <constraint firstAttribute="width" secondItem="gCH-6n-oqE" secondAttribute="height" multiplier="1:1.33" id="c9R-z4-a5Q"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbU-bK-YeR">
+                                <rect key="frame" x="0.0" y="177.5" width="414" height="551"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="p3r-UN-lKU" firstAttribute="trailing" secondItem="gCH-6n-oqE" secondAttribute="trailing" id="5Hf-6S-iCy"/>
                             <constraint firstItem="zQF-c1-Dau" firstAttribute="centerX" secondItem="ZAn-ya-9CX" secondAttribute="centerXWithinMargins" id="5tJ-oA-tQd"/>
+                            <constraint firstItem="AbU-bK-YeR" firstAttribute="top" secondItem="gCH-6n-oqE" secondAttribute="top" id="KFM-fK-Ga3"/>
+                            <constraint firstItem="AbU-bK-YeR" firstAttribute="bottom" secondItem="gCH-6n-oqE" secondAttribute="bottom" id="NJc-IM-PEO"/>
                             <constraint firstItem="gCH-6n-oqE" firstAttribute="leading" secondItem="p3r-UN-lKU" secondAttribute="leading" id="OmD-Dl-lci"/>
                             <constraint firstItem="gCH-6n-oqE" firstAttribute="centerY" secondItem="p3r-UN-lKU" secondAttribute="centerY" id="VTi-bC-mZ8"/>
+                            <constraint firstItem="AbU-bK-YeR" firstAttribute="trailing" secondItem="gCH-6n-oqE" secondAttribute="trailing" id="Whx-Y0-bVR"/>
+                            <constraint firstItem="AbU-bK-YeR" firstAttribute="leading" secondItem="gCH-6n-oqE" secondAttribute="leading" id="cY3-GK-HeD"/>
                             <constraint firstItem="p3r-UN-lKU" firstAttribute="bottom" secondItem="zQF-c1-Dau" secondAttribute="bottom" id="nyv-Gu-uGi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p3r-UN-lKU"/>
@@ -160,6 +168,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="cutoutView" destination="AbU-bK-YeR" id="bIn-HA-Lap"/>
                         <outlet property="faceLaserLabel" destination="8Rb-3v-bqc" id="5sL-d5-RxV"/>
                         <outlet property="faceView" destination="gCH-6n-oqE" id="wjd-14-EuM"/>
                     </connections>

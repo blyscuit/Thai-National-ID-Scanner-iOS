@@ -34,6 +34,9 @@ import TesseractOCR
 
 
 class AutoScanTTextDetectionViewController: UIViewController {
+    var maskLayer = CAShapeLayer()
+    @IBOutlet weak var cutoutView: UIView!
+
     @IBOutlet var faceView: UIImageView!
 
   @IBOutlet var faceLaserLabel: UILabel!
@@ -46,7 +49,10 @@ class AutoScanTTextDetectionViewController: UIViewController {
     var cvimage: CVImageBuffer?
     
     var nextScanDate = Date().timeIntervalSinceNow
+    let ocrReader = OCRReader()
     
+    var regionOfInterest = CGRect(x: 0, y: 0, width: 1, height: 1)
+
   let dataOutputQueue = DispatchQueue(
     label: "video data queue",
     qos: .userInitiated,
@@ -58,10 +64,19 @@ class AutoScanTTextDetectionViewController: UIViewController {
   var maxX: CGFloat = 0.0
   var midY: CGFloat = 0.0
   var maxY: CGFloat = 0.0
+    
+    var bufferAspectRatio = 0.0
 
     var sequenceHandler = VNSequenceRequestHandler()
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Set up cutout view.
+    cutoutView.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+    maskLayer.backgroundColor = UIColor.clear.cgColor
+    maskLayer.fillRule = .evenOdd
+    cutoutView.layer.mask = maskLayer
+    
     configureCaptureSession()
     
     
@@ -70,15 +85,20 @@ class AutoScanTTextDetectionViewController: UIViewController {
     maxY = view.bounds.maxY
     
     session.startRunning()
+    
+    // Create the mask.
+    let path = UIBezierPath(rect: cutoutView.frame)
+    path.append(UIBezierPath(rect: CGRect(x: 100, y: 100, width: 200, height: 300)))
+    maskLayer.path = path.cgPath
   }
 }
 
 // MARK: - Gesture methods
 
 extension AutoScanTTextDetectionViewController {
-  @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-    self.session.startRunning()
-  }
+    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
+        self.session.startRunning()
+    }
 }
 
 // MARK: - Video Processing methods
@@ -88,12 +108,30 @@ extension AutoScanTTextDetectionViewController {
     
 
     session.sessionPreset = AVCaptureSession.Preset.photo
-    let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
     
     // Define the capture device we want to use
     guard let camera = AVCaptureDevice.default(for: AVMediaType.video) else {
       fatalError("No front video camera available")
     }
+    
+    
+    do {
+        try camera.lockForConfiguration()
+        camera.videoZoomFactor = 2.5
+        camera.autoFocusRangeRestriction = .near
+        camera.unlockForConfiguration()
+    } catch {
+        print("Could not set zoom level due to error: \(error)")
+        return
+    }
+    
+    if camera.supportsSessionPreset(.hd4K3840x2160) {
+            session.sessionPreset = AVCaptureSession.Preset.hd4K3840x2160
+            bufferAspectRatio = 3840.0 / 2160.0
+        } else {
+            session.sessionPreset = AVCaptureSession.Preset.hd1920x1080
+            bufferAspectRatio = 1920.0 / 1080.0
+        }
     
     // Connect the camera to the capture session input
     do {
@@ -114,8 +152,9 @@ extension AutoScanTTextDetectionViewController {
     
     // Configure the preview layer
     previewLayer = AVCaptureVideoPreviewLayer(session: session)
-    previewLayer.videoGravity = .resizeAspect
+    previewLayer.videoGravity = .resizeAspectFill
     previewLayer.frame = faceView.bounds
+    previewLayer.opacity = 0.5
     faceView.layer.insertSublayer(previewLayer, at: 0)
   }
 }
@@ -142,7 +181,7 @@ extension AutoScanTTextDetectionViewController: AVCaptureVideoDataOutputSampleBu
       try sequenceHandler.perform(
         [detectFaceRequest],
         on: imageBuffer,
-        orientation: .right)
+        orientation: .up)
         
         
     } catch {
@@ -154,8 +193,7 @@ extension AutoScanTTextDetectionViewController: AVCaptureVideoDataOutputSampleBu
 //        print(request)
       // 1
       guard
-        let results = request.results as? [VNTextObservation],
-        let result = results.first
+        let results = request.results as? [VNTextObservation], results.count>0
         else {
           // 2
             DispatchQueue.main.async() {
@@ -167,8 +205,9 @@ extension AutoScanTTextDetectionViewController: AVCaptureVideoDataOutputSampleBu
         
         if results.count > 1 && Date().timeIntervalSince1970 > self.nextScanDate {
 //            self.session.stopRunning()
-//            DispatchQueue.main.async {
-//                self.faceView.layer.sublayers?.removeSubrange(1...)
+            DispatchQueue.main.async {
+                self.faceView.layer.sublayers?.removeSubrange(1...)
+            }
 
             self.nextScanDate = Date().timeIntervalSince1970 + 0.1
                 
@@ -180,7 +219,7 @@ extension AutoScanTTextDetectionViewController: AVCaptureVideoDataOutputSampleBu
                 let filter = CIFilter(name: "CILanczosScaleTransform")!
                 filter.setValue(ciImage, forKey: "inputImage")
 //                filter.setValue(self.previewLayer.frame.width / self.previewLayer.frame.height, forKey: "inputScale")
-                filter.setValue(self.previewLayer.frame.width / self.previewLayer.frame.height, forKey: "inputAspectRatio")
+//                filter.setValue(1 / (bufferAspectRatio), forKey: "inputAspectRatio")
                 let outputImage = filter.value(forKey: "outputImage") as! CIImage
 
                 let context = CIContext(options: [CIContextOption.useSoftwareRenderer: false])
@@ -192,9 +231,23 @@ extension AutoScanTTextDetectionViewController: AVCaptureVideoDataOutputSampleBu
                 
             
             
-                for region in results {
-                    self.cropWord(cgImage: cgImage, box: region)
+//                for region in results {
+//                    self.cropWord(cgImage: cgImage, box: region)
+//                    self.highlightWord(box: region)
+//                }
+            ocrReader.performOCR(on: cgImage, recognitionLevel: .accurate) { (result) in
+                if self.nationalIDProcessor.processText(text: result) == true {
+                    DispatchQueue.main.async {
+                        self.session.stopRunning()
+                        let vc = NationalIDResultViewController()
+                        vc.nationalID = self.nationalIDProcessor.nationalID
+                        self.present(vc, animated: true, completion: nil)
+                        
+                    }
                 }
+            }
+            
+            
 
 //                }
 //                let vc = ImageViewViewController()
@@ -225,6 +278,9 @@ extension AutoScanTTextDetectionViewController: AVCaptureVideoDataOutputSampleBu
         var maxY: CGFloat = 9999.0
         var minY: CGFloat = 0.0
         
+        var outlineWidth: CGFloat = 0
+        var outlineHeight: CGFloat = 0
+        
         for char in boxes {
             if char.bottomLeft.x < maxX {
                 maxX = char.bottomLeft.x
@@ -240,23 +296,49 @@ extension AutoScanTTextDetectionViewController: AVCaptureVideoDataOutputSampleBu
             }
         }
         
-        let xCord = (maxX + 0) * CGFloat(cgImage.width)
-        let yCord = ((1 - minY) + 0.006) * CGFloat(cgImage.height)
-        let width = ((minX - maxX) + 0) * CGFloat(cgImage.width)
-        let height = ((minY - maxY) + 0.012) * CGFloat(cgImage.height)
+        outlineWidth = ((boxes.first?.bottomRight.x ?? 0) - (boxes.first?.bottomLeft.x ?? 0)) * 1.8
+        outlineHeight = ((boxes.first?.bottomRight.y ?? 0) - (boxes.first?.topRight.y ?? 0)) * 1.8
         
-        guard let cropped = cgImage.cropping(to: CGRect(x: yCord, y: xCord, width: height, height: width)) else { return }
-                
+        let xCord = (maxX + outlineWidth) * CGFloat(cgImage.width)
+        let yCord = ((1 - minY) + outlineHeight) * CGFloat(cgImage.height)
+        let width = ((minX - maxX) + (outlineWidth * 2)) * CGFloat(cgImage.width)
+        let height = ((minY - maxY) + (outlineHeight * 2)) * CGFloat(cgImage.height)
+        
+        guard let cropped = cgImage.cropping(to: CGRect(x: xCord, y: yCord, width: width, height: height)) else { return }
+//        guard let cropped = cgImage.cropping(to: CGRect(x: yCord, y: xCord, width: height, height: width)) else { return }
+
+        let rn = CGFloat.random(in: 2 ..< 2.1)
+
+        let i = UIImage(cgImage: cgImage, scale: 1.0, orientation: .left)//UIImage(cgImage: UIImage(cgImage: cropped, scale: 1.0, orientation: .left).preprocessedImage(radius: rn)!.cgImage! , scale: 1.0, orientation: .left)
+        DispatchQueue.main.async {
+            self.faceView.image = i
+        }
+        
+        ocrReader.performOCR(on: i.cgImage, recognitionLevel: .accurate) { (result) in
+            if self.nationalIDProcessor.processText(text: result) == true {
+                self.session.stopRunning()
+                let vc = NationalIDResultViewController()
+                vc.nationalID = self.nationalIDProcessor.nationalID
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+        return
+        
         if let tesseract = G8Tesseract(language: "DilleniaUPC") {
         // 2
         tesseract.engineMode = .tesseractOnly
         // 3
-            tesseract.pageSegmentationMode = .sparseText
+            tesseract.pageSegmentationMode = .singleBlock
         // 4
             let rn = CGFloat.random(in: 1.3 ..< 1.4)
 //            print(rn)
-            tesseract.image = UIImage(cgImage: cropped, scale: 1.0, orientation: .left)//UIImage(cgImage: UIImage(cgImage: cropped, scale: 1.0, orientation: .left).preprocessedImage(radius: rn)!.cgImage! , scale: 1.0, orientation: .left)
-        // 5
+            tesseract.image = i
+            DispatchQueue.main.async {
+                self.faceView.image = tesseract.image
+            }
+            
+            
+            // 5
             if tesseract.recognize() {
                 // 6
 //                  DispatchQueue.main.async {
@@ -294,7 +376,8 @@ extension AutoScanTTextDetectionViewController: AVCaptureVideoDataOutputSampleBu
                 minY = char.topRight.y
             }
         }
-        
+        DispatchQueue.main.async {
+
         let xCord = maxX * self.faceView.frame.size.width
         let yCord = (1 - minY) * self.faceView.frame.size.height
         let width = (minX - maxX) * self.faceView.frame.size.width
@@ -302,13 +385,36 @@ extension AutoScanTTextDetectionViewController: AVCaptureVideoDataOutputSampleBu
         
         let outline = CALayer()
         outline.frame = CGRect(x: xCord, y: yCord, width: width, height: height)
+        outline.frame = CGRect(x: yCord, y: xCord, width: height, height: width)
         outline.borderWidth = 2.0
         outline.borderColor = UIColor.black.withAlphaComponent(0.2).cgColor
         
 
+            DispatchQueue.main.async() {
+                self.faceView.layer.addSublayer(outline)
+            }
+        }
+    }
+    
+    
+    func highlightLetters(box: VNRectangleObservation) {
         DispatchQueue.main.async() {
+
+        let xCord = box.topLeft.x * self.faceView.frame.size.width
+        let yCord = (1 - box.topLeft.y) * self.faceView.frame.size.height
+        let width = (box.topRight.x - box.bottomLeft.x) * self.faceView.frame.size.width
+        let height = (box.topLeft.y - box.bottomLeft.y) * self.faceView.frame.size.height
+        
+        let outline = CALayer()
+        outline.frame = CGRect(x: xCord, y: yCord, width: width, height: height)
+        outline.borderWidth = 1.0
+        outline.borderColor = UIColor.blue.cgColor
+        
+        DispatchQueue.main.async() {
+
             self.faceView.layer.addSublayer(outline)
         }
+    }
     }
     
 }

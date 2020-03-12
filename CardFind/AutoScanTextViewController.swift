@@ -61,12 +61,15 @@ class AutoTextDetectionViewController: UIViewController {
   var maxX: CGFloat = 0.0
   var midY: CGFloat = 0.0
   var maxY: CGFloat = 0.0
-    var sequenceHandler = VNSequenceRequestHandler()
+
     var cardPosition: VisionDetectorImageOrientation = .rightTop
     var cardDetected: Bool = false
     
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    textRecognizer = vision.onDeviceTextRecognizer()
+    
     configureCaptureSession()
     
     
@@ -76,7 +79,6 @@ class AutoTextDetectionViewController: UIViewController {
     
     session.startRunning()
     
-    textRecognizer = vision.onDeviceTextRecognizer()
   }
 }
 
@@ -132,22 +134,8 @@ extension AutoTextDetectionViewController {
 extension AutoTextDetectionViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
   func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
     
-    // 1
-    guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
-      return
-    }
-
-    self.cvimage = imageBuffer
-    
-    // 2
-    let detectFaceRequest = VNDetectTextRectanglesRequest(completionHandler: detectedFace)
-    detectFaceRequest.reportCharacterBoxes = true
     // 3
     do {
-      try sequenceHandler.perform(
-        [detectFaceRequest],
-        on: imageBuffer,
-        orientation: .right)
         
         let cameraPosition = AVCaptureDevice.Position.back  // Set to the capture device you used.
         let metadata = VisionImageMetadata()
@@ -214,164 +202,6 @@ extension AutoTextDetectionViewController: AVCaptureVideoDataOutputSampleBufferD
     }
     
   }
-    func detectedFace(request: VNRequest, error: Error?) {
-//        print(request)
-      // 1
-      guard
-        let results = request.results as? [VNTextObservation],
-        let result = results.first
-        else {
-          // 2
-            DispatchQueue.main.async() {
-                self.faceView.layer.sublayers?.removeSubrange(1...)
-            }
-          return
-      }
-
-        
-//        if results.count > 17 {
-//            self.session.stopRunning()
-//            DispatchQueue.main.async() {
-//
-//                self.cropped = []
-//
-//                guard let cvBuffer = self.cvimage else {
-//                    return
-//                }
-//                let ciImage = CIImage(cvPixelBuffer: cvBuffer)
-//
-//                let filter = CIFilter(name: "CILanczosScaleTransform")!
-//                filter.setValue(ciImage, forKey: "inputImage")
-////                filter.setValue(self.previewLayer.frame.width / self.previewLayer.frame.height, forKey: "inputScale")
-//                filter.setValue(self.previewLayer.frame.width / self.previewLayer.frame.height, forKey: "inputAspectRatio")
-//                let outputImage = filter.value(forKey: "outputImage") as! CIImage
-//
-//                let context = CIContext(options: [CIContextOption.useSoftwareRenderer: false])
-//                context.createCGImage(outputImage, from: outputImage.extent)
-//
-//                guard let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else {
-//                    return
-//                }
-//
-////                for region in results {
-////                    self.cropWord(cgImage: cgImage, box: region)
-////                }
-////
-////                let vc = ImageViewViewController()
-////                    vc.presentationController?.delegate = self
-////                vc.images = self.cropped
-//    //            self.session.stopRunning()
-////                self.present(vc, animated: true, completion: nil)
-//            }
-//        } else {
-            DispatchQueue.main.async() {
-                
-            self.faceView.layer.sublayers?.removeSubrange(1...)
-            for region in results {
-                self.highlightWord(box: region)
-                
-//                if let boxes = region.characterBoxes {
-//                    for characterBox in boxes {
-//                        self.highlightLetters(box: characterBox)
-//                    }
-//                }
-                }
-            }
-//        }
-
-    }
-    
-    func cropWord(cgImage: CGImage, box: VNTextObservation) {
-        guard let boxes = box.characterBoxes else {
-            return
-        }
-
-        var maxX: CGFloat = 9999.0
-        var minX: CGFloat = 0.0
-        var maxY: CGFloat = 9999.0
-        var minY: CGFloat = 0.0
-        
-        for char in boxes {
-            if char.bottomLeft.x < maxX {
-                maxX = char.bottomLeft.x
-            }
-            if char.bottomRight.x > minX {
-                minX = char.bottomRight.x
-            }
-            if char.bottomRight.y < maxY {
-                maxY = char.bottomRight.y
-            }
-            if char.topRight.y > minY {
-                minY = char.topRight.y
-            }
-        }
-        
-        let xCord = (maxX + 0.024) * CGFloat(cgImage.width)
-        let yCord = ((1 - minY) + 0.025) * CGFloat(cgImage.height)
-        let width = ((minX - maxX) + 0.048) * CGFloat(cgImage.width)
-        let height = ((minY - maxY) + 0.05) * CGFloat(cgImage.height)
-        
-        guard let cropped = cgImage.cropping(to: CGRect(x: yCord, y: xCord, width: height, height: width)) else { return }
-                self.cropped.append(UIImage(cgImage: cropped, scale: 0.99, orientation: .right))
-//                self.cropped.append(UIImage(cgImage: cgImage, scale: 0.99, orientation: .right))
-//        self.cropped.append(UIImage(named: "IMG_3263")!)
-    }
-    
-    func highlightWord(box: VNTextObservation) {
-        guard let boxes = box.characterBoxes else {
-            return
-        }
-        var maxX: CGFloat = 9999.0
-        var minX: CGFloat = 0.0
-        var maxY: CGFloat = 9999.0
-        var minY: CGFloat = 0.0
-        
-        for char in boxes {
-            if char.bottomLeft.x < maxX {
-                maxX = char.bottomLeft.x
-            }
-            if char.bottomRight.x > minX {
-                minX = char.bottomRight.x
-            }
-            if char.bottomRight.y < maxY {
-                maxY = char.bottomRight.y
-            }
-            if char.topRight.y > minY {
-                minY = char.topRight.y
-            }
-        }
-        
-        let xCord = maxX * self.faceView.frame.size.width
-        let yCord = (1 - minY) * self.faceView.frame.size.height
-        let width = (minX - maxX) * self.faceView.frame.size.width
-        let height = (minY - maxY) * self.faceView.frame.size.height
-        
-        let outline = CALayer()
-        outline.frame = CGRect(x: xCord, y: yCord, width: width, height: height)
-        outline.borderWidth = 2.0
-        outline.borderColor = UIColor.red.cgColor
-        
-
-        DispatchQueue.main.async() {
-            self.faceView.layer.addSublayer(outline)
-        }
-    }
-    func highlightLetters(box: VNRectangleObservation) {
-        let xCord = box.topLeft.x * self.faceView.frame.size.width
-        let yCord = (1 - box.topLeft.y) * self.faceView.frame.size.height
-        let width = (box.topRight.x - box.bottomLeft.x) * self.faceView.frame.size.width
-        let height = (box.topLeft.y - box.bottomLeft.y) * self.faceView.frame.size.height
-        
-        let outline = CALayer()
-        outline.frame = CGRect(x: xCord, y: yCord, width: width, height: height)
-        outline.borderWidth = 1.0
-        outline.borderColor = UIColor.blue.cgColor
-        
-        DispatchQueue.main.async() {
-
-            self.faceView.layer.addSublayer(outline)
-        }
-    }
     
 }
 

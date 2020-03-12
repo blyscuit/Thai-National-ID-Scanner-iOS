@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftOCR
+//import SwiftOCR
 import TesseractOCR
 import GPUImage
 import Firebase

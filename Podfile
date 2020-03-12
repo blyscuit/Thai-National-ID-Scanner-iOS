@@ -4,7 +4,7 @@
 target 'CardFind' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'SwiftOCR'
+  pod 'GPUImage'
   pod 'TesseractOCRiOS'
   pod 'Firebase/MLVision'
 pod 'Firebase/MLVisionTextModel'

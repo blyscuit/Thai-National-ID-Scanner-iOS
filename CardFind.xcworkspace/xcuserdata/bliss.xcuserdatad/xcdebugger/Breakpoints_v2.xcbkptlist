@@ -112,7 +112,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "218"
             endingLineNumber = "218"
-            landmarkName = "detectedFace(request:error:)"
+            landmarkName = "detectCard(request:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -311,22 +311,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4FAD69E7-C211-464C-83C9-70EACC2C9CB5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CardFind/AutoScanTTextViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
-            landmarkName = "detectedFace(request:error:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1F887F89-33C7-4ECD-AEF6-90F34156694A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -343,22 +327,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D0E7CC71-4D64-433F-BC02-FF2985B35866"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CardFind/AutoScanTTextViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "detectedFace(request:error:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "396826F9-D267-4A6E-A0E7-D6C9662954F4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -368,7 +336,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "232"
             endingLineNumber = "232"
-            landmarkName = "detectedFace(request:error:)"
+            landmarkName = "detectCard(request:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -399,9 +367,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "306"
-            endingLineNumber = "306"
-            landmarkName = "cropWord(cgImage:box:)"
-            landmarkType = "7">
+            endingLineNumber = "306">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -415,9 +381,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "316"
-            endingLineNumber = "316"
-            landmarkName = "cropWord(cgImage:box:)"
-            landmarkType = "7">
+            endingLineNumber = "316">
             <Locations>
                <Location
                   uuid = "2B382DA0-1B67-4855-A5A2-C8FA55ABF51E - 40bd2386270acca5"
